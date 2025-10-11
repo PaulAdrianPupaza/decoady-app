@@ -1,0 +1,261 @@
+{
+  "company": {
+    "name": "DecoAdyReformas",
+    "tagline": "Construyendo tus sueños con calidad y confianza",
+    "description": "Somos un grupo de personas líder en construcción y reformas en Ibiza con más de 25 años de experiencia en el sector. Nos especializamos en proyectos residenciales, comerciales e industriales, siempre con los más altos estándares de calidad."
+  },
+  "navigation": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Construyendo tus",
+    "titleHighlight": "Sueños",
+    "subtitle": "Más de 25 años transformando espacios con calidad, innovación y compromiso. Tu proyecto perfecto nos espera.",
+    "ctaViewProjects": "Ver Proyectos",
+    "ctaFreeQuote": "Presupuesto Gratuito"
+  },
+  "stats": {
+    "projectsCompleted": "Proyectos Completados",
+    "clientsSatisfied": "Clientes Satisfechos",
+    "yearsOfExperience": "Años de Experiencia",
+    "averageRating": "Valoración Media"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Ofrecemos soluciones integrales en construcción y reformas con los más altos estándares de calidad",
+    "viewAll": "Ver Todos los Servicios",
+    "categories": {
+      "construction": "Construcción",
+      "renovation": "Renovación",
+      "design": "Diseño",
+      "consulting": "Consultoría"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Descubre algunos de nuestros trabajos más recientes y exitosos",
+    "viewAll": "Ver Todos los Proyectos",
+    "filterTitle": "Filtrar Proyectos",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar por nombre, descripción o ubicación...",
+    "categories": {
+      "all": "Todas las Categorías",
+      "residential": "Residencial",
+      "commercial": "Comercial",
+      "industrial": "Industrial",
+      "renovation": "Reforma",
+      "infrastructure": "Infraestructura"
+    },
+    "status": {
+      "all": "Todos los Estados",
+      "completed": "Completado",
+      "inProgress": "En Progreso",
+      "planning": "Planificación",
+      "onHold": "En Pausa"
+    },
+    "sortBy": {
+      "date": "Fecha",
+      "title": "Título",
+      "area": "Área"
+    },
+    "noResults": "No se encontraron proyectos",
+    "noResultsDesc": "Prueba con otros términos de búsqueda o ajusta los filtros",
+    "loading": "Cargando proyectos...",
+    "noProjects": "No hay proyectos",
+    "noProjectsDesc": "Crea tu primer proyecto para empezar",
+    "completedOn": "Completado:",
+    "location": "Ubicación:",
+    "area": "Área:",
+    "budget": "Presupuesto:",
+    "featured": "Destacado"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Más de 15 años construyendo sueños",
+    "description": "Somos unos trabajadores de confianza  con una larga trayectoria en el sector de la construcción y reformas. Nos especializamos en transformar espacios con calidad, innovación y un compromiso total con nuestros clientes. Cada proyecto es único y lo abordamos con la pasión y dedicación que merece.",
+    "yearsExperience": "Años de Experiencia",
+    "projectsCompleted": "Proyectos Completados",
+    "happyClients": "Clientes Satisfechos",
+    "feature1": "Materiales de primera calidad",
+    "feature2": "Equipo profesional certificado",
+    "feature3": "Garantía en todos nuestros trabajos"
+  },
+  "testimonials": {
+    "title": "Lo que Dicen Nuestros Clientes",
+    "subtitle": "La satisfacción de nuestros clientes es nuestra mejor carta de presentación"
+  },
+  "cta": {
+    "title": "¿Listo para Comenzar tu Proyecto?",
+    "subtitle": "Contáctanos hoy mismo y obtén un presupuesto personalizado sin compromiso. Nuestro equipo de expertos está listo para hacer realidad tu visión.",
+    "requestQuote": "Solicitar Presupuesto",
+    "callNow": "Llamar Ahora"
+  },
+  "admin": {
+    "title": "Panel de Administración",
+    "subtitle": "Gestiona proyectos, imágenes y contenido de tu sitio web",
+    "sections": {
+      "projects": "Proyectos",
+      "projectsDesc": "Gestionar proyectos completos",
+      "images": "Imágenes",
+      "imagesDesc": "Subir imágenes por categoría",
+      "services": "Servicios",
+      "servicesDesc": "Gestionar servicios",
+      "analytics": "Estadísticas",
+      "analyticsDesc": "Ver estadísticas del sitio"
+    },
+    "projects": {
+      "create": "Crear Proyecto",
+      "edit": "Editar Proyecto",
+      "management": "Gestión de Proyectos",
+      "form": {
+        "title": "Título del Proyecto",
+        "titlePlaceholder": "Ej: Villa Moderna en Las Rozas",
+        "location": "Ubicación",
+        "locationPlaceholder": "Ej: Las Rozas, Madrid",
+        "category": "Categoría",
+        "status": "Estado",
+        "area": "Área (m²)",
+        "budget": "Presupuesto (€)",
+        "description": "Descripción",
+        "descriptionPlaceholder": "Describe el proyecto en detalle...",
+        "startDate": "Fecha de Inicio",
+        "completionDate": "Fecha de Finalización",
+        "featured": "Proyecto Destacado",
+        "features": "Características del Proyecto",
+        "featuresPlaceholder": "Añadir característica...",
+        "add": "Añadir",
+        "images": "Imágenes del Proyecto",
+        "imagesDesc": "Sube imágenes para mostrar el proyecto",
+        "save": "Guardar Proyecto",
+        "update": "Actualizar Proyecto",
+        "cancel": "Cancelar",
+        "saving": "Guardando...",
+        "saved": "Proyecto guardado correctamente"
+      }
+    },
+    "images": {
+      "title": "Gestión de Imágenes por Categoría",
+      "upload": "Subir Imágenes",
+      "categories": {
+        "projects": "Proyectos",
+        "projectsDesc": "Fotos de proyectos completados",
+        "services": "Servicios",
+        "servicesDesc": "Imágenes representativas de servicios",
+        "hero": "Banners",
+        "heroDesc": "Imágenes para secciones principales",
+        "team": "Equipo",
+        "teamDesc": "Fotos del equipo de trabajo",
+        "testimonials": "Testimonios",
+        "testimonialsDesc": "Fotos relacionadas con testimonios"
+      }
+    },
+    "instructions": {
+      "title": "Instrucciones de Uso",
+      "config": "Configuración: Asegúrate de tener configuradas las variables de entorno en .env.local",
+      "organization": "Organización: Las imágenes se organizan automáticamente en carpetas por categoría",
+      "urls": "URLs: Una vez subidas, puedes copiar las URLs para usar en tu aplicación",
+      "formats": "Formatos: Se admiten JPG, PNG, WEBP hasta 10MB por imagen",
+      "deletion": "Eliminación: Ten cuidado al eliminar, no se puede deshacer"
+    }
+  },
+  "actions": {
+    "view": "Ver",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "loading": "Cargando...",
+    "refresh": "Actualizar",
+    "copy": "Copiar",
+    "upload": "Subir",
+    "download": "Descargar"
+  },
+  "form": {
+    "required": "Obligatorio",
+    "optional": "Opcional",
+    "select": "Seleccionar",
+    "selectOption": "Selecciona una opción",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "clear": "Limpiar",
+    "apply": "Aplicar"
+  },
+  "messages": {
+    "success": "Operación exitosa",
+    "error": "Ha ocurrido un error",
+    "loading": "Cargando...",
+    "noData": "No hay datos disponibles",
+    "confirmDelete": "¿Estás seguro de que quieres eliminar este elemento?",
+    "cannotUndo": "Esta acción no se puede deshacer",
+    "saved": "Guardado correctamente",
+    "uploaded": "Subido correctamente",
+    "deleted": "Eliminado correctamente"
+  },
+  "footer": {
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "businessHours": "Horarios",
+    "copyright": "Todos los derechos reservados",
+    "developedWith": "Desarrollado con ❤️ para construir el futuro",
+    "privacy": "Política de Privacidad"
+  },
+  "contact": {
+    "phone": "Teléfono",
+    "email": "Email",
+    "address": "Dirección",
+    "hours": "Horarios",
+    "freeQuote": "Presupuesto Gratis",
+    "title": "Contacta con Nosotros",
+    "subtitle": "¿Tienes un proyecto en mente? Estamos aquí para ayudarte. Solicita tu presupuesto gratuito y sin compromiso.",
+    "formTitle": "Envíanos un Mensaje",
+    "infoTitle": "Información de Contacto",
+    "hoursTitle": "Horarios de Atención",
+    "whyChooseTitle": "¿Por qué elegirnos?",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Email",
+      "phone": "Teléfono",
+      "projectType": "Tipo de proyecto",
+      "timeline": "Cuándo quieres empezar",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "privacy": "Acepto la política de privacidad y el tratamiento de mis datos personales.",
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "success": "¡Mensaje enviado correctamente! Te contactaremos pronto.",
+      "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+      "projectTypes": {
+        "reforma": "Reforma integral",
+        "reparacion": "Reparación/Chapuzas",
+        "consultoria": "Consultoría",
+        "otro": "Otro"
+      },
+      "timelines": {
+        "inmediato": "Inmediatamente",
+        "1-mes": "En 1 mes",
+        "3-meses": "En 3 meses",
+        "6-meses": "En 6 meses",
+        "flexible": "Soy flexible"
+      }
+    }
+  },
+  "upload": {
+    "dragDrop": "Haz clic para subir o arrastra las imágenes aquí",
+    "formats": "PNG, JPG, WEBP hasta 10MB cada una",
+    "maxFiles": "máx. {{count}} archivos",
+    "uploading": "Subiendo imágenes...",
+    "success": "{{count}} imagen{{plural}} subida{{plural}} correctamente",
+    "error": "{{count}} imagen{{plural}} falló{{plural}} al subir",
+    "errorGeneral": "Error durante la subida",
+    "errorUnknown": "Error desconocido"
+  },
+  "language": {
+    "select": "Seleccionar idioma",
+    "current": "Idioma actual"
+  }
+} 

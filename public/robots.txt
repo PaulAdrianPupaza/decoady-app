@@ -1,0 +1,7 @@
+# robots.txt for decoady-app
+User-agent: *
+Allow: /
+
+Sitemap: https://decoady.netlify.app/sitemap.xml
+
+

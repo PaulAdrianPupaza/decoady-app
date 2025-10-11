@@ -1,0 +1,42 @@
+{
+  "name": "decoady-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "deploy": "npm run build",
+    "lint": "next lint",
+    "clean": "rmdir /s /q .next 2>nul || true",
+    "clean-all": "rmdir /s /q .next 2>nul && rmdir /s /q node_modules 2>nul && npm install",
+    "fresh": "npm run clean && npm run dev",
+    "fix-eperm": "scripts/fix-eperm.bat",
+    "restart": "npm run clean && npm run dev"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@supabase/supabase-js": "^2.50.5",
+    "clsx": "^2.1.1",
+    "i18next": "^25.3.2",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "next": "15.3.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.6.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.5",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5"
+  }
+}
