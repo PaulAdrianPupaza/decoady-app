@@ -120,20 +120,17 @@ El proyecto incluye datos de muestra para:
 - ✅ **Todas las funciones utilizadas**
 - ✅ **Estructura limpia y mantenible**
 - ✅ **Optimizado para producción**
-
-## 📈 Próximas Mejoras Recomendadas
-
-- Arreglar problemas con supa []
-- Cambiar detalles []
-- Añadir bot mail []
-- Publicar []
+-✅ **Arreglar problemas con supa** 
+-✅ **Cambiar detalle**
+-✅ **Añadir bot mail**
+-✅ **Publicar**
 
 ## 📞 Contacto
 
 **Decoady Reformas**
 - 📧 Email: decoadyreformas@gmail.com
 - 📱 Teléfono: +34 650 242 511
-- 📍 Dirección: Calle Principal 123, Madrid, España
+
 
 ---
 
