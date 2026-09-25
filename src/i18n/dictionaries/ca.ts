@@ -170,6 +170,15 @@ const ca: Dictionary = {
     ],
     responseTime: "Responem en menys de 24 h laborables.",
     openMaps: "Veure a Google Maps",
+    autoReply: {
+      subject: "Hem rebut la teva sol·licitud · Decoady Reformas",
+      greeting: "Hola",
+      intro: "Gràcies per contactar amb Decoady Reformas. Hem rebut la teva sol·licitud i et respondrem en menys de 24 hores laborables.",
+      summary: "Resum de la teva sol·licitud",
+      next: "Si vols avançar feina, ens pots enviar fotos de l'espai per WhatsApp. Ens ajuden a preparar un pressupost més precís.",
+      closing: "Salutacions,",
+      notProvided: "No indicat",
+    },
   },
   footer: {
     about: "Reformes integrals, viles, piscines i locals comercials a Eivissa. Més de 25 anys d'experiència.",

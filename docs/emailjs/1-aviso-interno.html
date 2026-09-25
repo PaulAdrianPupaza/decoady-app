@@ -1,0 +1,98 @@
+<!--
+  PLANTILLA 1 · Aviso interno (te llega a ti cada vez que alguien rellena el formulario)
+
+  Configuración en EmailJS (Email Templates → Create New Template):
+    Subject:    Nueva solicitud web · {{project_type}} · {{from_name}}
+    To Email:   decoadyreformas@gmail.com
+    From Name:  Web Decoady Reformas
+    Reply To:   {{from_email}}
+  En "Content" pulsa "Edit Content" → "Code Editor" y pega todo este archivo.
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f7f4ee;padding:24px 0;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e2d9ca;">
+        <!-- Cabecera -->
+        <tr>
+          <td style="background:#1a1814;padding:24px 32px;">
+            <span style="font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#fcfbf8;">Decoady</span>
+            <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#dea07f;padding-left:8px;">REFORMAS · IBIZA</span>
+          </td>
+        </tr>
+
+        <!-- Título -->
+        <tr>
+          <td style="padding:32px 32px 8px;font-family:Arial,Helvetica,sans-serif;">
+            <p style="margin:0;font-size:12px;letter-spacing:2px;color:#9c4726;font-weight:bold;">NUEVA SOLICITUD DESDE LA WEB</p>
+            <h1 style="margin:12px 0 0;font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:28px;line-height:1.2;color:#12110e;">{{from_name}}</h1>
+            <p style="margin:8px 0 0;font-size:15px;color:#6b665d;">{{project_type}} · {{timeline}}</p>
+          </td>
+        </tr>
+
+        <!-- Botones -->
+        <tr>
+          <td style="padding:20px 32px 8px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background:#b5572f;">
+                  <a href="mailto:{{from_email}}" style="display:inline-block;padding:12px 20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;text-decoration:none;">Responder por email</a>
+                </td>
+                <td style="width:8px;"></td>
+                <td style="border:1px solid #1a1814;">
+                  <a href="tel:{{phone}}" style="display:inline-block;padding:11px 20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#1a1814;text-decoration:none;">Llamar</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Datos -->
+        <tr>
+          <td style="padding:24px 32px 8px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+              <tr>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#8f897e;width:38%;">Email</td>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#12110e;"><a href="mailto:{{from_email}}" style="color:#12110e;">{{from_email}}</a></td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#8f897e;">Teléfono</td>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#12110e;">{{phone}}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#8f897e;">Tipo de trabajo</td>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#12110e;">{{project_type}}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#8f897e;">Cuándo quiere empezar</td>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#12110e;">{{timeline}}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#8f897e;">Idioma</td>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;color:#12110e;">{{language}}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;border-bottom:1px solid #efe9df;color:#8f897e;">Recibido</td>
+                <td style="padding:10px 0;border-top:1px solid #efe9df;border-bottom:1px solid #efe9df;color:#12110e;">{{sent_at}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Mensaje -->
+        <tr>
+          <td style="padding:24px 32px 32px;font-family:Arial,Helvetica,sans-serif;">
+            <p style="margin:0 0 10px;font-size:12px;letter-spacing:2px;color:#8f897e;font-weight:bold;">MENSAJE</p>
+            <div style="background:#f7f4ee;padding:20px;font-size:15px;line-height:1.6;color:#2b2823;white-space:pre-line;">{{message}}</div>
+          </td>
+        </tr>
+
+        <!-- Pie -->
+        <tr>
+          <td style="padding:16px 32px;background:#f7f4ee;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#8f897e;">
+            Si respondes a este correo, la respuesta le llega directamente a {{from_name}} ({{from_email}}).
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

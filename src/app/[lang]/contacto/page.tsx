@@ -48,7 +48,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
           <div className="lg:col-span-7">
             <h2 className="text-3xl">{c.formTitle}</h2>
             <div className="mt-10">
-              <ContactForm lang={lang} t={c} />
+              <ContactForm lang={lang} t={c} internal={getDictionary("es").contact} />
             </div>
           </div>
 

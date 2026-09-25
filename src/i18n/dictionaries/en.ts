@@ -170,6 +170,15 @@ const en: Dictionary = {
     ],
     responseTime: "We reply within 24 working hours.",
     openMaps: "Open in Google Maps",
+    autoReply: {
+      subject: "We have received your request · Decoady Reformas",
+      greeting: "Hello",
+      intro: "Thank you for contacting Decoady Reformas. We have received your request and will reply within 24 working hours.",
+      summary: "Summary of your request",
+      next: "If you like, you can send us photos of the space on WhatsApp. They help us prepare a more accurate quote.",
+      closing: "Kind regards,",
+      notProvided: "Not provided",
+    },
   },
   footer: {
     about: "Full renovations, villas, pools and commercial premises in Ibiza. Over 25 years of experience.",

@@ -171,6 +171,16 @@ const es = {
     ],
     responseTime: "Respondemos en menos de 24 h laborables.",
     openMaps: "Ver en Google Maps",
+    // Textos del email de respuesta automática que recibe el cliente
+    autoReply: {
+      subject: "Hemos recibido tu solicitud · Decoady Reformas",
+      greeting: "Hola",
+      intro: "Gracias por contactar con Decoady Reformas. Hemos recibido tu solicitud y te responderemos en menos de 24 horas laborables.",
+      summary: "Resumen de tu solicitud",
+      next: "Si quieres adelantar trabajo, puedes enviarnos fotos del espacio por WhatsApp. Nos ayudan a preparar un presupuesto más preciso.",
+      closing: "Un saludo,",
+      notProvided: "No indicado",
+    },
   },
   footer: {
     about:
