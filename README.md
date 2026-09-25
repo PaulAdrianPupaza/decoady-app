@@ -54,5 +54,10 @@ Cada `git push` a `main` publica una nueva versión; las ramas y los PR generan 
 
 ## Formulario de contacto
 
-Se envía con EmailJS. La plantilla recibe `from_name`, `from_email`, `phone`, `subject`, `message`, `project_type`, `timeline` y `language`.
+Se envía con EmailJS y usa dos plantillas, que están en `docs/emailjs/`:
+
+- `1-aviso-interno.html`: el aviso que llega a la empresa, siempre en español. Si respondes al correo, la respuesta va directamente al cliente.
+- `2-respuesta-cliente.html`: la respuesta automática que recibe el cliente, en su idioma. Se activa en la pestaña *Auto-Reply* de la plantilla 1.
+
+Al principio de cada archivo se indica cómo configurar el asunto y los remitentes en EmailJS. Los textos de la respuesta automática se editan en `contact.autoReply` de los diccionarios.
 Cuando un envío tiene éxito, se registra el evento `lead_form` en Vercel Analytics. Los eventos personalizados solo se ven en el plan Pro de Vercel; en el plan gratuito, cuenta los envíos que llegan desde EmailJS.

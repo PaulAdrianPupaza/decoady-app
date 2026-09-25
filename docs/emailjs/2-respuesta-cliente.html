@@ -1,0 +1,99 @@
+<!--
+  PLANTILLA 2 · Respuesta automática al cliente (en su idioma: ES / EN / CA)
+
+  Configuración en EmailJS (Email Templates → Create New Template):
+    Subject:    {{reply_subject}}
+    To Email:   {{from_email}}
+    From Name:  Decoady Reformas
+    Reply To:   decoadyreformas@gmail.com
+  En "Content" pulsa "Edit Content" → "Code Editor" y pega todo este archivo.
+  Después, en la PLANTILLA 1 → pestaña "Auto-Reply", selecciona esta plantilla.
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f7f4ee;padding:24px 0;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e2d9ca;">
+        <!-- Cabecera -->
+        <tr>
+          <td style="background:#1a1814;padding:24px 32px;">
+            <span style="font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#fcfbf8;">Decoady</span>
+            <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;color:#dea07f;padding-left:8px;">REFORMAS · IBIZA</span>
+          </td>
+        </tr>
+
+        <!-- Saludo -->
+        <tr>
+          <td style="padding:36px 32px 8px;font-family:Arial,Helvetica,sans-serif;">
+            <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:26px;line-height:1.25;color:#12110e;">{{reply_greeting}}</h1>
+            <p style="margin:16px 0 0;font-size:16px;line-height:1.6;color:#4a463f;">{{reply_intro}}</p>
+          </td>
+        </tr>
+
+        <!-- Resumen -->
+        <tr>
+          <td style="padding:24px 32px 8px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f7f4ee;font-family:Arial,Helvetica,sans-serif;">
+              <tr>
+                <td style="padding:20px 24px 4px;font-size:12px;letter-spacing:2px;color:#9c4726;font-weight:bold;">{{reply_summary}}</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 24px 0;font-size:14px;color:#8f897e;">{{reply_label_type}}</td>
+              </tr>
+              <tr>
+                <td style="padding:2px 24px 0;font-size:15px;color:#12110e;">{{reply_project_type}}</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 24px 0;font-size:14px;color:#8f897e;">{{reply_label_timeline}}</td>
+              </tr>
+              <tr>
+                <td style="padding:2px 24px 0;font-size:15px;color:#12110e;">{{reply_timeline}}</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 24px 0;font-size:14px;color:#8f897e;">{{reply_label_message}}</td>
+              </tr>
+              <tr>
+                <td style="padding:2px 24px 20px;font-size:15px;line-height:1.6;color:#12110e;white-space:pre-line;">{{message}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Siguiente paso -->
+        <tr>
+          <td style="padding:24px 32px 8px;font-family:Arial,Helvetica,sans-serif;">
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#4a463f;">{{reply_next}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:16px 32px 8px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background:#25D366;">
+                  <a href="https://wa.me/34650242511" style="display:inline-block;padding:12px 22px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;text-decoration:none;">WhatsApp · +34 650 242 511</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Firma -->
+        <tr>
+          <td style="padding:28px 32px 36px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#4a463f;">
+            {{reply_closing}}<br />
+            <span style="font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#12110e;">Decoady Reformas</span>
+          </td>
+        </tr>
+
+        <!-- Pie -->
+        <tr>
+          <td style="padding:20px 32px;background:#1a1814;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.7;color:#cfc2ad;">
+            <a href="tel:+34650242511" style="color:#fcfbf8;text-decoration:none;">+34 650 242 511</a> ·
+            <a href="mailto:decoadyreformas@gmail.com" style="color:#fcfbf8;text-decoration:none;">decoadyreformas@gmail.com</a><br />
+            Carrer des Figueral, 11 · 07800 Eivissa ·
+            <a href="{{site_url}}" style="color:#dea07f;">{{site_url}}</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

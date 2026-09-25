@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { useState, type FormEvent } from "react";
-import { localePath, type Locale } from "@/i18n/config";
+import { localeNames, localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n";
 import { sendEmail } from "@/lib/emailjs";
 import { COMPANY } from "@/lib/site";
@@ -12,7 +12,20 @@ import Icon from "./Icon";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-export default function ContactForm({ lang, t }: { lang: Locale; t: Dictionary["contact"] }) {
+type ContactTexts = Dictionary["contact"];
+type ProjectType = keyof ContactTexts["projectTypes"];
+type Timeline = keyof ContactTexts["timelines"];
+
+export default function ContactForm({
+  lang,
+  t,
+  internal,
+}: {
+  lang: Locale;
+  t: ContactTexts;
+  /** Textos en español para el aviso interno, sea cual sea el idioma del visitante */
+  internal: ContactTexts;
+}) {
   const [status, setStatus] = useState<Status>("idle");
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -23,19 +36,36 @@ export default function ContactForm({ lang, t }: { lang: Locale; t: Dictionary["
     if (data.get("website")) return;
 
     setStatus("sending");
-    const type = String(data.get("projectType") || "");
-    const timeline = String(data.get("timeline") || "");
+    const field = (name: string) => String(data.get(name) || "").trim();
+    const name = field("name");
+    const type = field("projectType") as ProjectType | "";
+    const timeline = field("timeline") as Timeline | "";
+    const reply = t.autoReply;
+
+    // Los nombres de estos parámetros son las variables {{...}} de las plantillas de EmailJS (docs/emailjs)
     const ok = await sendEmail({
-      // Mismos nombres que la plantilla de EmailJS existente
-      from_name: String(data.get("name") || ""),
-      from_email: String(data.get("email") || ""),
-      phone: String(data.get("phone") || ""),
-      subject: `Solicitud web: ${type ? t.projectTypes[type as keyof typeof t.projectTypes] : "Presupuesto"}`,
-      message: String(data.get("message") || ""),
-      project_type: type,
-      timeline,
-      language: lang,
-      to_email: COMPANY.email,
+      // Aviso interno (en español)
+      from_name: name,
+      from_email: field("email"),
+      phone: field("phone") || internal.autoReply.notProvided,
+      project_type: type ? internal.projectTypes[type] : internal.autoReply.notProvided,
+      timeline: timeline ? internal.timelines[timeline] : internal.autoReply.notProvided,
+      message: field("message"),
+      language: localeNames[lang],
+      sent_at: new Intl.DateTimeFormat("es-ES", { dateStyle: "full", timeStyle: "short", timeZone: "Europe/Madrid" }).format(new Date()),
+      // Respuesta automática al cliente (en su idioma)
+      reply_subject: reply.subject,
+      reply_greeting: `${reply.greeting} ${name.split(" ")[0]},`,
+      reply_intro: reply.intro,
+      reply_summary: reply.summary,
+      reply_project_type: type ? t.projectTypes[type] : reply.notProvided,
+      reply_timeline: timeline ? t.timelines[timeline] : reply.notProvided,
+      reply_next: reply.next,
+      reply_closing: reply.closing,
+      reply_label_type: t.projectType,
+      reply_label_timeline: t.timeline,
+      reply_label_message: t.message,
+      site_url: window.location.origin,
     });
     setStatus(ok ? "success" : "error");
     if (ok) {
