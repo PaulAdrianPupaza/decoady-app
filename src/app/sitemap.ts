@@ -1,65 +1,30 @@
-import type { MetadataRoute } from 'next'
-import { DatabaseService } from '@/services/databaseService'
-import { projects as mockProjects } from '@/data/mockData'
+import type { MetadataRoute } from "next";
+import { locales, localePath } from "@/i18n/config";
+import { projects } from "@/data/projects";
+import { services } from "@/data/services";
+import { absoluteUrl } from "@/lib/seo";
 
-export const dynamic = 'force-static'
-export const revalidate = false
+export default function sitemap(): MetadataRoute.Sitemap {
+  const pages: { path: string; priority: number }[] = [
+    { path: "/", priority: 1 },
+    { path: "/servicios", priority: 0.9 },
+    ...services.map((s) => ({ path: `/servicios/${s.slug}`, priority: 0.9 })),
+    { path: "/proyectos", priority: 0.8 },
+    ...projects.map((p) => ({ path: `/proyectos/${p.slug}`, priority: 0.7 })),
+    { path: "/contacto", priority: 0.8 },
+    { path: "/legal", priority: 0.2 },
+  ];
 
-function getBaseUrl(): string {
-  const envUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL
-  if (envUrl) return envUrl.replace(/\/$/, '')
-  // Fallback to known deployment URL
-  return 'https://decoady.netlify.app'
+  const lastModified = new Date();
+
+  return pages.flatMap(({ path, priority }) =>
+    locales.map((lang) => ({
+      url: absoluteUrl(localePath(lang, path)),
+      lastModified,
+      priority: lang === "es" ? priority : Math.round(priority * 0.9 * 10) / 10,
+      alternates: {
+        languages: Object.fromEntries(locales.map((l) => [l, absoluteUrl(localePath(l, path))])),
+      },
+    }))
+  );
 }
-
-async function getAllProjectIds(): Promise<string[]> {
-  try {
-    const projects = await DatabaseService.getAllProjects()
-    if (projects && projects.length > 0) {
-      return projects.map(p => p.id)
-    }
-  } catch {
-    // ignore
-  }
-  // Fallback to mock data (typed)
-  const mockIds = Array.isArray(mockProjects) ? mockProjects.map(p => p.id) : []
-  return mockIds
-}
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = getBaseUrl()
-  const now = new Date()
-
-  const staticEntries: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/proyectos/`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contacto/`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-  ]
-
-  const projectIds = await getAllProjectIds()
-  const projectEntries: MetadataRoute.Sitemap = projectIds.map((projectId) => ({
-    url: `${baseUrl}/proyectos/${projectId}/`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
-
-  return [...staticEntries, ...projectEntries]
-}
-
-

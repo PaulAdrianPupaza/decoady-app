@@ -1,20 +1,14 @@
-// Utilidades comunes para la aplicación
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-
-// Función para combinar clases de Tailwind
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Formatear fechas
-export function formatDate(date: Date, format: 'short' | 'long' = 'short'): string {
-  const options: Intl.DateTimeFormatOptions = format === 'long' 
-    ? { year: 'numeric', month: 'long', day: 'numeric' }
-    : { year: 'numeric', month: 'short', day: 'numeric' };
-    
-  return new Intl.DateTimeFormat('es-ES', options).format(date);
-}
+const dateLocales = { es: "es-ES", en: "en-GB", ca: "ca-ES" } as const;
 
- 
+/** "2019-02" → "febrero de 2019" */
+export function formatMonth(isoMonth: string, locale: keyof typeof dateLocales): string {
+  const [y, m] = isoMonth.split("-").map(Number);
+  return new Intl.DateTimeFormat(dateLocales[locale], { month: "long", year: "numeric" }).format(new Date(y, m - 1, 1));
+}
