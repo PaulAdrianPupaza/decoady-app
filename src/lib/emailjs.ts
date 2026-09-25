@@ -1,31 +1,21 @@
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser";
 
-// Configuración de EmailJS
-export const EMAILJS_CONFIG = {
-  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_xxxxxxx',
-  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_xxxxxxx',
-  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'xxxxxxxxxxxxxxx',
-}
+const config = {
+  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+};
 
-// Función para enviar email
-export const sendEmail = async (templateParams: Record<string, string | number>) => {
-  try {
-    const result = await emailjs.send(
-      EMAILJS_CONFIG.serviceId,
-      EMAILJS_CONFIG.templateId,
-      templateParams,
-      EMAILJS_CONFIG.publicKey
-    )
-    
-    console.log('Email sent successfully:', result)
-    return { success: true, result }
-  } catch (error) {
-    console.error('Error sending email:', error)
-    return { success: false, error }
+export async function sendEmail(params: Record<string, string>): Promise<boolean> {
+  if (!config.serviceId || !config.templateId || !config.publicKey) {
+    console.error("EmailJS no está configurado: revisa las variables NEXT_PUBLIC_EMAILJS_*");
+    return false;
   }
-}
-
-// Inicializar EmailJS
-export const initEmailJS = () => {
-  emailjs.init(EMAILJS_CONFIG.publicKey)
+  try {
+    await emailjs.send(config.serviceId, config.templateId, params, { publicKey: config.publicKey });
+    return true;
+  } catch (error) {
+    console.error("Error enviando el formulario:", error);
+    return false;
+  }
 }

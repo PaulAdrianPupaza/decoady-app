@@ -1,138 +1,58 @@
-# 🏗️ Decoady Reformas - Sitio Web Corporativo
+# Decoady Reformas
 
-Un sitio web moderno y profesional para una empresa constructora, desarrollado con Next.js 15, TypeScript, Tailwind CSS y React 19, siguiendo una arquitectura MVC bien estructurada y **completamente simplificada**.
+Web corporativa de Decoady Reformas (reformas y construcción en Ibiza).
+Next.js 15 · React 19 · Tailwind CSS · desplegada en Vercel.
 
-## ✨ Características Principales
-
-- **🎨 Diseño Moderno**: Interfaz elegante y profesional optimizada para constructoras
-- **📱 Responsive**: Completamente adaptado a todos los dispositivos
-- **⚡ Rendimiento**: Optimizado con Next.js 15 y React 19
-- **🔧 TypeScript**: Tipado fuerte para mejor desarrollo y mantenimiento
-- **🎯 SEO Optimizado**: Meta tags, Open Graph y estructura semántica
-- **♿ Accesible**: Cumple con estándares de accesibilidad web
-- **🏗️ Arquitectura MVC**: Código bien organizado y escalable
-- **🧹 Código Limpio**: **Solo funciones utilizadas, sin código muerto**
-
-## 🚀 Tecnologías Utilizadas
-
-- **Framework**: Next.js 15 (App Router)
-- **Frontend**: React 19, TypeScript
-- **Estilos**: Tailwind CSS v3.4
-- **Herramientas**: ESLint, PostCSS
-- **Arquitectura**: Modelo-Vista-Controlador (MVC)
-
-## 📁 Estructura del Proyecto (Simplificada)
-
-```
-src/
-├── app/                 # App Router de Next.js (Vista - Páginas)
-│   ├── layout.tsx       # Layout principal
-│   ├── page.tsx         # Página de inicio
-│   └── globals.css      # Estilos globales
-├── components/          # Componentes reutilizables (Vista)
-│   ├── ui/             # Componentes base (Button, Card)
-│   └── layout/         # Componentes de layout (Header, Footer)
-├── types/              # Tipos TypeScript (Modelo)
-│   └── index.ts        # Interfaces principales
-├── data/               # Datos estáticos (Modelo)
-│   └── mockData.ts     # Datos de muestra
-├── services/           # Servicios y lógica de negocio (Controlador)
-│   └── dataService.ts  # Servicios de datos
-├── lib/                # Utilidades
-│   └── utils.ts        # Solo funciones utilizadas
-└── constants/          # Constantes de la aplicación
-    └── index.ts        # Solo constantes utilizadas
-```
-
-## 🛠️ Instalación y Configuración
-
-### Prerrequisitos
-
-- Node.js 18+ 
-- npm, yarn o pnpm
-
-### Instalación
-
-1. **Clonar el repositorio**
-   ```bash
-   git clone <repository-url>
-   cd decoady-app
-   ```
-
-2. **Instalar dependencias**
-   ```bash
-   npm install
-   ```
-
-3. **Ejecutar en desarrollo**
-   ```bash
-   npm run dev
-   ```
-
-4. **Abrir en el navegador**
-   Visita [http://localhost:3000](http://localhost:3000)
-
-## 🔧 Scripts Disponibles
+## Desarrollo
 
 ```bash
-# Desarrollo
-npm run dev          # Servidor de desarrollo
-
-# Producción
-npm run build        # Construir para producción
-npm run start        # Servidor de producción
-
-# Calidad de código
-npm run lint         # Ejecutar ESLint
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # compilación de producción
+npm run typecheck  # comprobación de tipos
 ```
 
-## 📊 Datos Incluidos
+## Idiomas y URLs
 
-El proyecto incluye datos de muestra para:
+| Idioma  | URL de ejemplo              |
+| ------- | --------------------------- |
+| Español | `/proyectos` (sin prefijo)  |
+| English | `/en/proyectos`             |
+| Català  | `/ca/proyectos`             |
 
-- **✅ Proyectos**: 3 proyectos destacados (Villa, Ático, Centro Comercial)
-- **✅ Servicios**: 4 servicios principales (Construcción, Reformas, Diseño, Consultoría)
-- **✅ Testimonios**: 4 reseñas de clientes satisfechos
-- **✅ Información corporativa**: Historia, misión, visión, valores
+`src/middleware.ts` reescribe internamente las rutas en español a `/es/...`.
+Todas las páginas se generan como HTML estático, con `hreflang`, canonical y datos estructurados (Schema.org).
 
-## 🎨 Características de Diseño
+## Dónde se edita el contenido
 
-- **Color Scheme**: Azules profesionales con acentos dorados
-- **Tipografía**: Inter (Google Fonts) para legibilidad óptima
-- **Componentes**: Sistema de componentes consistente
-- **Animaciones**: Transiciones suaves y efectos de hover
-- **Iconografía**: Emojis y SVG optimizados
+| Qué                                    | Archivo                                  |
+| -------------------------------------- | ---------------------------------------- |
+| Teléfono, email, dirección, horarios   | `src/lib/site.ts`                        |
+| Textos generales (ES / EN / CA)        | `src/i18n/dictionaries/{es,en,ca}.ts`    |
+| Servicios (una página SEO por servicio) | `src/data/services.ts`                   |
+| Proyectos                              | `src/data/projects.ts`                   |
+| Fotos de proyectos                     | `public/images/proyectos/<slug>/NN.jpg`  |
 
-## 📱 Secciones de la Página Principal
+### Añadir un proyecto
 
-- **🏠 Hero Section**: Impactante sección principal con CTA
-- **📊 Estadísticas**: Métricas de la empresa
-- **🔧 Servicios**: Grid de servicios principales
-- **🏗️ Proyectos Destacados**: Galería de trabajos recientes
-- **⭐ Testimonios**: Reseñas de clientes
-- **📞 Call to Action**: Sección de contacto
+1. Crea la carpeta `public/images/proyectos/<slug>/` y guarda las fotos como `01.jpg`, `02.jpg`… (máx. ~2000 px de ancho).
+2. Añade una entrada en `src/data/projects.ts` con el mismo `slug`, el número de fotos (`photoCount`) y los textos en los tres idiomas.
+3. Haz commit y push: Vercel publica automáticamente y el sitemap se actualiza solo.
 
-## 🚀 Estado Actual
+## Despliegue en Vercel
 
-- ✅ **Proyecto completamente funcional**
-- ✅ **Sin errores de compilación**
-- ✅ **Sin código muerto**
-- ✅ **Todas las funciones utilizadas**
-- ✅ **Estructura limpia y mantenible**
-- ✅ **Optimizado para producción**
--✅ **Arreglar problemas con supa** 
--✅ **Cambiar detalle**
--✅ **Añadir bot mail**
--✅ **Publicar**
+1. En [vercel.com/new](https://vercel.com/new), importa el repositorio de GitHub (Vercel detecta Next.js y no hace falta configurar nada).
+2. En **Settings → Environment Variables** añade:
+   - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+   - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+   - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+   - `NEXT_PUBLIC_SITE_URL`: el dominio definitivo, por ejemplo `https://www.decoady.com` (opcional; si no existe, se usa el dominio de producción de Vercel).
+3. En **Analytics** y **Speed Insights**, pulsa *Enable* (plan gratuito, sin cookies).
+4. En **Settings → Domains**, añade el dominio propio.
 
-## 📞 Contacto
+Cada `git push` a `main` publica una nueva versión; las ramas y los PR generan previsualizaciones.
 
-**Decoady Reformas**
-- 📧 Email: decoadyreformas@gmail.com
-- 📱 Teléfono: +34 650 242 511
+## Formulario de contacto
 
-
----
-
-✨ **Proyecto simplificado y optimizado** - Solo código necesario y funcional
-
+Se envía con EmailJS. La plantilla recibe `from_name`, `from_email`, `phone`, `subject`, `message`, `project_type`, `timeline` y `language`.
+Cuando un envío tiene éxito, se registra el evento `lead_form` en Vercel Analytics. Los eventos personalizados solo se ven en el plan Pro de Vercel; en el plan gratuito, cuenta los envíos que llegan desde EmailJS.

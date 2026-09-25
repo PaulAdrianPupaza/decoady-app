@@ -1,131 +1,97 @@
-'use client'
+import Link from "next/link";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n";
+import { services } from "@/data/services";
+import { COMPANY } from "@/lib/site";
+import Icon from "@/components/Icon";
+import Logo from "@/components/Logo";
 
-import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
-import { CONTACT_INFO } from '@/constants';
-
-export default function Footer() {
-  const { t } = useTranslation();
-  
+export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
+  const { footer, nav, contact } = dict;
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
-          {/* Información de la empresa */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">D</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">{t('company.name')}</h3>
-                <p className="text-gray-300 text-sm">{t('company.tagline')}</p>
-              </div>
-            </div>
-            <p className="text-gray-300 mb-4 max-w-md">
-              {t('company.description')}
-            </p>
-          </div>
-
-          {/* Enlaces rápidos */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">{t('footer.quickLinks')}</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  href="/"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  {t('navigation.home')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/proyectos"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  {t('navigation.projects')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/contacto"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  {t('navigation.contact')}
-                </Link>
-              </li>
-             
-            </ul>
-          </div>
-
-          {/* Información de contacto */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">{t('footer.contact')}</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <svg className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div className="text-gray-300 text-sm">
-                  {CONTACT_INFO.address}
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <a 
-                  href={`tel:${CONTACT_INFO.phone}`}
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  {CONTACT_INFO.phone}
-                </a>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.83 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <a 
-                  href={`mailto:${CONTACT_INFO.email}`}
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  {CONTACT_INFO.email}
-                </a>
-              </div>
-            </div>
-
-            {/* Horarios */}
-            <div className="mt-6">
-              <h5 className="font-medium text-gray-200 mb-2">{t('footer.businessHours')}</h5>
-              <div className="space-y-1 text-sm text-gray-300">
-                {Object.entries(CONTACT_INFO.businessHours).map(([day, hours]) => (
-                  <div key={day} className="flex justify-between">
-                    <span>{day}:</span>
-                    <span>{hours}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+    <footer className="bg-ink-900 text-sand-300">
+      <div className="container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <Logo inverted />
+          <p className="mt-6 max-w-sm text-sm leading-relaxed text-sand-300/80">{footer.about}</p>
         </div>
 
-        {/* Línea divisoria y copyright */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} {t('company.name')}. {t('footer.copyright')}.
-            </p>
-            <p className="text-gray-400 text-sm mt-2 md:mt-0">
-              {t('footer.developedWith')}
-            </p>
-          </div>
+        <div className="lg:col-span-3">
+          <h2 className="font-sans text-xs font-semibold uppercase tracking-eyebrow text-sand-50">{nav.services}</h2>
+          <ul className="mt-5 space-y-3 text-sm">
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link href={localePath(lang, `/servicios/${s.slug}`)} className="hover:text-white">
+                  {s.title[lang]}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="lg:col-span-2">
+          <h2 className="font-sans text-xs font-semibold uppercase tracking-eyebrow text-sand-50">{footer.explore}</h2>
+          <ul className="mt-5 space-y-3 text-sm">
+            <li><Link href={localePath(lang, "/")} className="hover:text-white">{nav.home}</Link></li>
+            <li><Link href={localePath(lang, "/servicios")} className="hover:text-white">{nav.services}</Link></li>
+            <li><Link href={localePath(lang, "/proyectos")} className="hover:text-white">{nav.projects}</Link></li>
+            <li><Link href={localePath(lang, "/contacto")} className="hover:text-white">{nav.contact}</Link></li>
+          </ul>
+        </div>
+
+        <div className="lg:col-span-3">
+          <h2 className="font-sans text-xs font-semibold uppercase tracking-eyebrow text-sand-50">{footer.contact}</h2>
+          <ul className="mt-5 space-y-4 text-sm">
+            <li>
+              <a href={COMPANY.phoneHref} className="flex items-center gap-3 hover:text-white">
+                <Icon name="phone" className="h-4 w-4 shrink-0 text-clay-300" />
+                {COMPANY.phone}
+              </a>
+            </li>
+            <li>
+              <a href={COMPANY.whatsappHref} target="_blank" rel="noopener" className="flex items-center gap-3 hover:text-white">
+                <Icon name="whatsapp" className="h-4 w-4 shrink-0 text-clay-300" />
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-3 break-all hover:text-white">
+                <Icon name="mail" className="h-4 w-4 shrink-0 text-clay-300" />
+                {COMPANY.email}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-clay-300" />
+              <span>
+                {COMPANY.address.street}
+                <br />
+                {COMPANY.address.postalCode} {COMPANY.address.city}, {COMPANY.address.region}
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <Icon name="clock" className="mt-0.5 h-4 w-4 shrink-0 text-clay-300" />
+              <span>
+                {contact.hours.slice(0, 2).map((h) => (
+                  <span key={h.day} className="block">
+                    {h.day}: {h.time}
+                  </span>
+                ))}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="container flex flex-col gap-3 py-6 text-xs text-sand-300/70 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {COMPANY.name}. {footer.rights}
+          </p>
+          <Link href={localePath(lang, "/legal")} className="hover:text-white">
+            {footer.legal}
+          </Link>
         </div>
       </div>
     </footer>
   );
-} 
+}

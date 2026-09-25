@@ -1,84 +1,63 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    container: {
+      center: true,
+      padding: { DEFAULT: "1.25rem", sm: "1.5rem", lg: "2rem" },
+      screens: { "2xl": "1280px" },
+    },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
-        mono: ["var(--font-jetbrains-mono)", "JetBrains Mono", "monospace"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       colors: {
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+        // Tinta: textos y fondos oscuros
+        ink: {
+          DEFAULT: "#1a1814",
+          900: "#12110e",
+          800: "#1a1814",
+          700: "#2b2823",
+          600: "#4a463f",
+          500: "#6b665d",
+          400: "#8f897e",
+          300: "#b9b3a8",
         },
-        secondary: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+        // Arena: fondos claros cálidos (piedra de Ibiza)
+        sand: {
+          50: "#fcfbf8",
+          100: "#f7f4ee",
+          200: "#efe9df",
+          300: "#e2d9ca",
+          400: "#cfc2ad",
         },
-        accent: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',
-          800: '#065f46',
-          900: '#064e3b',
+        // Arcilla: color de marca / acentos
+        clay: {
+          50: "#fbf3ee",
+          100: "#f5e2d6",
+          300: "#dea07f",
+          500: "#b5572f",
+          600: "#9c4726",
+          700: "#7f3a1f",
+        },
+      },
+      letterSpacing: {
+        eyebrow: "0.18em",
+      },
+      keyframes: {
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        "fade-in": "fadeIn 1s ease-in-out",
-        "slide-up": "slideUp 0.8s ease-out",
-        "scale": "scale 0.5s ease-in-out",
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        slideUp: {
-          "0%": { opacity: "0", transform: "translateY(100px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        scale: {
-          "0%": { opacity: "0", transform: "scale(0.9)" },
-          "100%": { opacity: "1", transform: "scale(1)" },
-        },
-      },
-      boxShadow: {
-        soft: "0 10px 40px rgba(0, 0, 0, 0.1)",
-        hard: "0 20px 60px rgba(0, 0, 0, 0.2)",
-      },
-      backdropBlur: {
-        xs: "2px",
+        "fade-up": "fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both",
       },
     },
   },
   plugins: [],
 };
 
-export default config; 
+export default config;
