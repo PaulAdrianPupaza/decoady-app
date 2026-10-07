@@ -11,7 +11,7 @@ export default function Breadcrumbs({ items }: { items: { name: string; path: st
             <li key={item.path} className="flex items-center gap-2">
               {i > 0 && <span aria-hidden="true">/</span>}
               {i < items.length - 1 ? (
-                <Link href={item.path} className="hover:text-ink-900">
+                <Link href={item.path} className="inline-block py-1.5 hover:text-ink-900">
                   {item.name}
                 </Link>
               ) : (

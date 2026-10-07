@@ -106,7 +106,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
         <div className="container">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeader eyebrow={t.home.servicesEyebrow} title={t.home.servicesTitle} text={t.home.servicesText} />
-            <Link href={localePath(lang, "/servicios")} className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-ink-900">
+            <Link href={localePath(lang, "/servicios")} className="group inline-flex min-h-10 shrink-0 items-center gap-2 text-sm font-semibold text-ink-900">
               {t.home.allServices}
               <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -121,7 +121,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
                 <Icon name={s.icon} className="h-9 w-9 text-clay-600" />
                 <h3 className="mt-8 text-2xl">{s.title[lang]}</h3>
                 <p className="mt-3 flex-1 text-ink-600">{s.short[lang]}</p>
-                <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-ink-900">
+                <span className="mt-8 inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-ink-900">
                   {t.services.more}
                   <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -136,7 +136,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
         <div className="container">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeader eyebrow={t.home.projectsEyebrow} title={t.home.projectsTitle} text={t.home.projectsText} />
-            <Link href={localePath(lang, "/proyectos")} className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-ink-900">
+            <Link href={localePath(lang, "/proyectos")} className="group inline-flex min-h-10 shrink-0 items-center gap-2 text-sm font-semibold text-ink-900">
               {t.home.allProjects}
               <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>

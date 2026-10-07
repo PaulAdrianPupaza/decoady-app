@@ -1,27 +1,15 @@
-import { headers } from "next/headers";
-import { getDictionary, isLocale, localePath, defaultLocale } from "@/i18n";
-import ButtonLink from "@/components/ButtonLink";
+import { getDictionary, localePath, locales } from "@/i18n";
+import NotFoundContent, { type NotFoundTexts } from "@/components/NotFoundContent";
 
-export default async function NotFound() {
-  const h = (await headers()).get("x-locale") ?? defaultLocale;
-  const lang = isLocale(h) ? h : defaultLocale;
-  const t = getDictionary(lang);
+// No usa headers() ni cookies(): si lo hiciera, Next.js volvería dinámicas (y no cacheables) todas las páginas.
+// Se generan los textos de los tres idiomas y el cliente elige según la URL.
+export default function NotFound() {
+  const texts = Object.fromEntries(
+    locales.map((lang) => {
+      const t = getDictionary(lang).notFound;
+      return [lang, { ...t, homeHref: localePath(lang, "/"), projectsHref: localePath(lang, "/proyectos") }];
+    })
+  ) as NotFoundTexts;
 
-  return (
-    <section className="section">
-      <div className="container max-w-2xl py-10 text-center">
-        <p className="font-serif text-7xl text-clay-500">404</p>
-        <h1 className="mt-6 text-4xl">{t.notFound.title}</h1>
-        <p className="mt-4 text-lg text-ink-600">{t.notFound.text}</p>
-        <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <ButtonLink href={localePath(lang, "/")} variant="dark">
-            {t.notFound.home}
-          </ButtonLink>
-          <ButtonLink href={localePath(lang, "/proyectos")} variant="outline">
-            {t.notFound.projects}
-          </ButtonLink>
-        </div>
-      </div>
-    </section>
-  );
+  return <NotFoundContent texts={texts} />;
 }

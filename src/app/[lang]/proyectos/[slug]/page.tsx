@@ -144,7 +144,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
           <div className="mt-10">
             <Gallery photos={photos} alt={project.title[lang]} t={t.common} />
           </div>
-          <Link href={localePath(lang, "/proyectos")} className="group mt-12 inline-flex items-center gap-2 text-sm font-semibold text-ink-900">
+          <Link href={localePath(lang, "/proyectos")} className="group mt-12 inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-ink-900">
             <Icon name="arrowLeft" className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
             {t.projects.back}
           </Link>

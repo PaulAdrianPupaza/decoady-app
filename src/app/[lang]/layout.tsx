@@ -13,7 +13,8 @@ import WhatsAppFab from "@/components/WhatsAppFab";
 import "../globals.css";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const serif = Fraunces({ subsets: ["latin"], variable: "--font-serif", display: "swap", axes: ["opsz"] });
+// Solo el grosor 400 (es el único que usan los titulares): mucho más ligera que la fuente variable completa
+const serif = Fraunces({ subsets: ["latin"], weight: "400", variable: "--font-serif", display: "swap" });
 
 
 export function generateStaticParams() {
