@@ -57,7 +57,7 @@ export function localBusinessJsonLd(lang: Locale, description: string) {
     email: COMPANY.email,
     foundingDate: String(COMPANY.foundedYear),
     image: `${SITE_URL}/images/proyectos/chalet-en-ibiza/01.jpg`,
-    logo: `${SITE_URL}/icon.svg`,
+    logo: `${SITE_URL}/brand/decoady-logo.png`,
     priceRange: "€€",
     address: {
       "@type": "PostalAddress",
