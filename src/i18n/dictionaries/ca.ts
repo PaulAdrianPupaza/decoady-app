@@ -161,7 +161,6 @@ const ca: Dictionary = {
     whatsappLabel: "WhatsApp",
     whatsappText: "Escriu-nos i envia'ns fotos",
     emailLabel: "Correu",
-    addressLabel: "Oficina",
     hoursLabel: "Horari",
     hours: [
       { day: "Dilluns a divendres", time: "8:00 – 18:00" },
@@ -169,7 +168,6 @@ const ca: Dictionary = {
       { day: "Diumenge", time: "Tancat" },
     ],
     responseTime: "Responem en menys de 24 h laborables.",
-    openMaps: "Veure a Google Maps",
     autoReply: {
       subject: "Hem rebut la teva sol·licitud · Decoady Reformas",
       greeting: "Hola",

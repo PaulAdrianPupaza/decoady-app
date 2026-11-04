@@ -21,14 +21,6 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
     { icon: "phone", label: c.phoneLabel, value: COMPANY.phone, href: COMPANY.phoneHref },
     { icon: "whatsapp", label: c.whatsappLabel, value: COMPANY.phone, href: COMPANY.whatsappHref, hint: c.whatsappText, external: true },
     { icon: "mail", label: c.emailLabel, value: COMPANY.email, href: `mailto:${COMPANY.email}`, hint: c.responseTime },
-    {
-      icon: "pin",
-      label: c.addressLabel,
-      value: `${COMPANY.address.street}, ${COMPANY.address.postalCode} ${COMPANY.address.city}`,
-      href: COMPANY.mapsHref,
-      hint: c.openMaps,
-      external: true,
-    },
   ];
 
   return (
