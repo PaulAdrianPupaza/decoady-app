@@ -46,7 +46,7 @@ Todas las páginas se generan como HTML estático, con `hreflang`, canonical y d
    - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
    - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
    - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-   - `NEXT_PUBLIC_SITE_URL`: el dominio definitivo, por ejemplo `https://www.decoady.com` (opcional; si no existe, se usa el dominio de producción de Vercel).
+   - `NEXT_PUBLIC_SITE_URL`: el dominio definitivo, por ejemplo `https://www.decoadyreformas.com` (opcional; si no existe, se usa el dominio de producción de Vercel).
 3. En **Analytics** y **Speed Insights**, pulsa *Enable* (plan gratuito, sin cookies).
 4. En **Settings → Domains**, añade el dominio propio.
 
