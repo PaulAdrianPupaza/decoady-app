@@ -162,7 +162,6 @@ const es = {
     whatsappLabel: "WhatsApp",
     whatsappText: "Escríbenos y envíanos fotos",
     emailLabel: "Email",
-    addressLabel: "Oficina",
     hoursLabel: "Horario",
     hours: [
       { day: "Lunes a viernes", time: "8:00 – 18:00" },
@@ -170,7 +169,6 @@ const es = {
       { day: "Domingo", time: "Cerrado" },
     ],
     responseTime: "Respondemos en menos de 24 h laborables.",
-    openMaps: "Ver en Google Maps",
     // Textos del email de respuesta automática que recibe el cliente
     autoReply: {
       subject: "Hemos recibido tu solicitud · Decoady Reformas",
