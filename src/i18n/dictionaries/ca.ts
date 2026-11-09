@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const ca: Dictionary = {
   meta: {
-    siteTitle: "Decoady Reformas · Reformes i construcció a Eivissa",
+    siteTitle: "Reformes a Eivissa · Empresa de reformes integrals | Decoady",
     siteDescription:
-      "Empresa de reformes a Eivissa amb més de 25 anys d'experiència. Reformes integrals d'habitatges, viles, cuines, banys, piscines i locals. Pressupost gratuït i sense compromís.",
+      "Empresa de reformes a Eivissa amb més de 25 anys d'experiència. Reformes integrals de pisos, cases i viles, cuines, banys, piscines, locals i manteniment. Pressupost gratuït.",
     projectsTitle: "Projectes de reformes a Eivissa",
     projectsDescription:
       "Reformes integrals, viles, piscines i locals comercials que hem fet a Eivissa. Fotos reals de les nostres obres.",
@@ -28,8 +28,8 @@ const ca: Dictionary = {
     language: "Idioma",
   },
   hero: {
-    eyebrow: "Reformes i construcció a Eivissa",
-    title: "Reformem espais a Eivissa amb ofici i rigor",
+    eyebrow: "Empresa de reformes a Eivissa",
+    title: "Reformes a Eivissa amb ofici i rigor",
     subtitle:
       "Més de 25 anys fent reformes integrals d'habitatges, viles i locals a l'illa. Un únic equip, un interlocutor i un pressupost clar des del primer dia.",
     primary: "Demanar pressupost gratuït",
@@ -78,6 +78,41 @@ const ca: Dictionary = {
     areaTitle: "A tota l'illa d'Eivissa",
     areaText:
       "Fem reformes a Eivissa, Sant Josep de sa Talaia, Sant Antoni de Portmany, Santa Eulària des Riu i Sant Joan de Labritja.",
+    seoEyebrow: "Reformes a Eivissa",
+    seoTitle: "La teva empresa de reformes a Eivissa",
+    seoText: [
+      "A Decoady Reformas fem reformes a Eivissa des de 2001. Treballam en pisos, apartaments, cases i viles, i també en locals comercials, bars i restaurants: reformes integrals d'habitatges, cuines i banys nous, piscines i el manteniment de cases que passen mesos buides.",
+      "Les reformes de pisos a Eivissa tenen els seus propis reptes: edificis amb instal·lacions antigues, comunitats de veïns, accessos estrets al centre històric i la humitat del clima de l'illa. A les cases i viles de camp s'hi afegeixen els exteriors, les cobertes, les piscines i la pedra. Coneixem bé tots dos tipus d'obra perquè fa més de 25 anys que les feim aquí.",
+      "A més, a Eivissa el calendari compta. Diversos ajuntaments limiten les obres sorolloses a zones turístiques durant la temporada alta, així que planificam cada reforma per aprofitar els mesos de menys activitat i lliurar a temps.",
+    ],
+    seoServicesTitle: "Quines reformes feim",
+    faqTitle: "Preguntes freqüents sobre reformes a Eivissa",
+    faqs: [
+      {
+        q: "Quant costa una reforma a Eivissa?",
+        a: "Depèn de la mida, de l'estat de l'habitatge i dels acabats que triïs. Per això visitam l'obra i et donam un pressupost detallat per partides, gratuït i sense compromís, abans de començar.",
+      },
+      {
+        q: "Feis reformes de pisos i apartaments?",
+        a: "Sí. Reformam pisos i apartaments sencers o per parts: cuina, banys, terres, instal·lacions elèctriques i de lampisteria, fusteria i pintura. També coordinam el que calgui amb la comunitat de veïns.",
+      },
+      {
+        q: "A quines zones d'Eivissa treballau?",
+        a: "A tota l'illa: Eivissa, Sant Josep de sa Talaia, Sant Antoni de Portmany, Santa Eulària des Riu i Sant Joan de Labritja.",
+      },
+      {
+        q: "Es poden fer obres a l'estiu a Eivissa?",
+        a: "Depèn del municipi i de la zona: diversos ajuntaments restringeixen les obres sorolloses a zones turístiques durant la temporada alta. T'ho confirmam a la visita i planificam l'obra per evitar aturades.",
+      },
+      {
+        q: "Us encarregau dels permisos i llicències?",
+        a: "Sí. T'assessoram sobre quin tràmit necessita la teva reforma (comunicació prèvia o llicència d'obra) i ens encarregam de la documentació.",
+      },
+      {
+        q: "Feis manteniment de cases quan el propietari no és a l'illa?",
+        a: "Sí. Ens ocupam de reparacions, manteniment i posada a punt de cases i viles abans de la teva arribada o de la temporada, i t'enviam fotos del treball acabat.",
+      },
+    ],
   },
   cta: {
     title: "Tens una reforma en ment?",

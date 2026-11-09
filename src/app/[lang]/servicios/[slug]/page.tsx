@@ -4,11 +4,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, localePath, locales, type Locale } from "@/i18n";
 import { getService, services } from "@/data/services";
+import { serviceContent } from "@/data/serviceContent";
 import { projects } from "@/data/projects";
 import { COMPANY, SITE_URL } from "@/lib/site";
 import { absoluteUrl, pageMetadata } from "@/lib/seo";
 import ButtonLink, { buttonClass } from "@/components/ButtonLink";
 import CtaBand from "@/components/CtaBand";
+import FaqList from "@/components/FaqList";
 import Icon from "@/components/Icon";
 import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
@@ -42,6 +44,9 @@ export default async function ServicePage({ params }: { params: Params }) {
   const related = projects.filter((p) => p.services.includes(slug));
   const others = services.filter((s) => s.slug !== slug);
   const path = localePath(lang, `/servicios/${slug}`);
+  const content = serviceContent[slug];
+  const sections = content?.sections[lang] ?? [];
+  const faqs = [...service.faqs[lang], ...(content?.faqs[lang] ?? [])];
 
   return (
     <>
@@ -55,17 +60,6 @@ export default async function ServicePage({ params }: { params: Params }) {
           serviceType: service.title[lang],
           provider: { "@id": `${SITE_URL}/#business` },
           areaServed: { "@type": "Place", name: "Ibiza" },
-        }}
-      />
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: service.faqs[lang].map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
         }}
       />
 
@@ -92,17 +86,20 @@ export default async function ServicePage({ params }: { params: Params }) {
               ))}
             </div>
 
+            {sections.map((section) => (
+              <div key={section.heading} className="mt-14">
+                <h2 className="text-3xl">{section.heading}</h2>
+                <div className="prose-body mt-6 text-lg leading-relaxed text-ink-700">
+                  {section.paragraphs.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+
             <h2 className="mt-16 text-3xl">{t.services.faq}</h2>
-            <div className="mt-8 divide-y divide-ink-900/10 border-y border-ink-900/10">
-              {service.faqs[lang].map((f) => (
-                <details key={f.q} className="group py-6">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-medium text-ink-900 [&::-webkit-details-marker]:hidden">
-                    {f.q}
-                    <Icon name="chevronDown" className="h-5 w-5 shrink-0 text-ink-500 transition-transform group-open:rotate-180" />
-                  </summary>
-                  <p className="mt-4 leading-relaxed text-ink-600">{f.a}</p>
-                </details>
-              ))}
+            <div className="mt-8">
+              <FaqList faqs={faqs} />
             </div>
           </div>
 
