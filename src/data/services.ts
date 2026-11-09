@@ -27,9 +27,9 @@ export const services: Service[] = [
       ca: "Renovació completa d'habitatges, apartaments i viles, clau en mà.",
     },
     metaTitle: {
-      es: "Reformas integrales en Ibiza · Viviendas y villas",
-      en: "Full home & villa renovations in Ibiza",
-      ca: "Reformes integrals a Eivissa · Habitatges i viles",
+      es: "Reformas integrales en Ibiza · Pisos, casas y villas",
+      en: "Full renovations in Ibiza · Apartments, houses & villas",
+      ca: "Reformes integrals a Eivissa · Pisos, cases i viles",
     },
     metaDescription: {
       es: "Reformas integrales de pisos, casas y villas en Ibiza. Un solo equipo, presupuesto detallado por partidas y gestión de permisos. Pide presupuesto gratis.",
@@ -293,21 +293,21 @@ export const services: Service[] = [
     slug: "reparaciones-y-mantenimiento",
     icon: "tools",
     image: "/images/proyectos/apartamento-reformado-ibiza/12.jpg",
-    title: { es: "Reparaciones y mantenimiento", en: "Repairs & maintenance", ca: "Reparacions i manteniment" },
+    title: { es: "Mantenimiento y reparaciones", en: "Maintenance & repairs", ca: "Manteniment i reparacions" },
     short: {
       es: "Reparaciones rápidas y mantenimiento de viviendas, villas y apartamentos turísticos.",
       en: "Prompt repairs and maintenance for homes, villas and holiday rentals.",
       ca: "Reparacions ràpides i manteniment d'habitatges, viles i apartaments turístics.",
     },
     metaTitle: {
-      es: "Reparaciones y mantenimiento de villas en Ibiza",
-      en: "Villa repairs & maintenance in Ibiza",
-      ca: "Reparacions i manteniment de viles a Eivissa",
+      es: "Mantenimiento de casas y villas en Ibiza · Reparaciones",
+      en: "House & villa maintenance in Ibiza · Repairs",
+      ca: "Manteniment de cases i viles a Eivissa · Reparacions",
     },
     metaDescription: {
-      es: "Reparaciones y mantenimiento de casas, villas y alquileres vacacionales en Ibiza: humedades, pintura, fontanería, electricidad y puesta a punto antes de temporada.",
-      en: "Repairs and maintenance for houses, villas and holiday rentals in Ibiza: damp, painting, plumbing, electrics and pre-season checks.",
-      ca: "Reparacions i manteniment de cases, viles i lloguers vacacionals a Eivissa: humitats, pintura, lampisteria, electricitat i posada a punt abans de temporada.",
+      es: "Mantenimiento de casas, villas y alquileres vacacionales en Ibiza: revisiones, reparaciones, humedades, pintura y puesta a punto antes de temporada. Cuidamos tu casa mientras estás fuera.",
+      en: "Maintenance for houses, villas and holiday rentals in Ibiza: checks, repairs, damp, painting and pre-season preparation. We look after your home while you're away.",
+      ca: "Manteniment de cases, viles i lloguers vacacionals a Eivissa: revisions, reparacions, humitats, pintura i posada a punt abans de temporada. Cuidam la teva casa mentre ets fora.",
     },
     intro: {
       es: [

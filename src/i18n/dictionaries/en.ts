@@ -2,9 +2,9 @@ import type { Dictionary } from "./es";
 
 const en: Dictionary = {
   meta: {
-    siteTitle: "Decoady Reformas · Renovation & building contractor in Ibiza",
+    siteTitle: "Builders & renovation company in Ibiza | Decoady Reformas",
     siteDescription:
-      "Renovation company in Ibiza with over 25 years of experience. Full renovations of homes and villas, kitchens, bathrooms, pools and commercial premises. Free, no-obligation quote.",
+      "Renovation company and builders in Ibiza with over 25 years of experience. Full renovations of apartments, houses and villas, kitchens, bathrooms, pools and property maintenance. Free quote.",
     projectsTitle: "Renovation projects in Ibiza",
     projectsDescription:
       "Full renovations, villas, pools and commercial premises we have completed in Ibiza. Real photos of our work.",
@@ -28,8 +28,8 @@ const en: Dictionary = {
     language: "Language",
   },
   hero: {
-    eyebrow: "Renovation & construction in Ibiza",
-    title: "Renovating homes in Ibiza with craft and care",
+    eyebrow: "Renovation company in Ibiza",
+    title: "Renovations in Ibiza, built with craft and care",
     subtitle:
       "Over 25 years delivering full renovations of homes, villas and commercial spaces on the island. One team, one point of contact and a clear quote from day one.",
     primary: "Get a free quote",
@@ -78,6 +78,41 @@ const en: Dictionary = {
     areaTitle: "All over Ibiza",
     areaText:
       "We carry out renovations in Eivissa, Sant Josep de sa Talaia, Sant Antoni de Portmany, Santa Eulària des Riu and Sant Joan de Labritja.",
+    seoEyebrow: "Renovations in Ibiza",
+    seoTitle: "Your renovation company in Ibiza",
+    seoText: [
+      "Decoady Reformas has been renovating properties in Ibiza since 2001. We work on apartments, houses and villas, as well as shops, bars and restaurants: full home renovations, new kitchens and bathrooms, pools, and maintenance for homes that stand empty for months.",
+      "Renovating in Ibiza comes with its own challenges: older buildings with outdated installations, residents' associations, narrow access in the old town and the island's humidity. Country houses and villas add outdoor areas, roofs, pools and stonework. We know both kinds of project well after more than 25 years building here.",
+      "Timing matters too. Several town councils restrict noisy building work in tourist areas during the high season, so we plan each renovation around the quieter months to finish on time. If you live abroad, we keep you updated with photos throughout.",
+    ],
+    seoServicesTitle: "What we renovate",
+    faqTitle: "Renovating in Ibiza: frequently asked questions",
+    faqs: [
+      {
+        q: "How much does a renovation in Ibiza cost?",
+        a: "It depends on the size, the condition of the property and the finishes you choose. That's why we visit first and give you a free, itemised quote with no obligation before any work starts.",
+      },
+      {
+        q: "Do you renovate apartments?",
+        a: "Yes. We renovate apartments fully or in parts: kitchen, bathrooms, floors, electrics, plumbing, carpentry and painting. We also coordinate whatever is needed with the residents' association.",
+      },
+      {
+        q: "Which areas of Ibiza do you cover?",
+        a: "The whole island: Eivissa, Sant Josep de sa Talaia, Sant Antoni de Portmany, Santa Eulària des Riu and Sant Joan de Labritja.",
+      },
+      {
+        q: "Can building work be done in summer in Ibiza?",
+        a: "It depends on the municipality and the area: several town councils restrict noisy work in tourist areas during the high season. We confirm it at the site visit and plan the job to avoid stoppages.",
+      },
+      {
+        q: "Do you handle permits?",
+        a: "Yes. We advise you on which permit your renovation needs (prior notice or building licence) and take care of the paperwork.",
+      },
+      {
+        q: "Can you look after my house while I'm away?",
+        a: "Yes. We handle repairs, maintenance and getting houses and villas ready before you arrive or before the season, and send you photos of the finished work.",
+      },
+    ],
   },
   cta: {
     title: "Planning a renovation?",

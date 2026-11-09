@@ -6,6 +6,7 @@ import { services } from "@/data/services";
 import { COMPANY } from "@/lib/site";
 import ButtonLink from "@/components/ButtonLink";
 import CtaBand from "@/components/CtaBand";
+import FaqList from "@/components/FaqList";
 import Icon from "@/components/Icon";
 import ProjectCard from "@/components/ProjectCard";
 import SectionHeader from "@/components/SectionHeader";
@@ -196,6 +197,45 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
               {COMPANY.phone}
             </a>
           </aside>
+        </div>
+      </section>
+
+      {/* Reformas en Ibiza: texto descriptivo, enlaces a cada servicio y preguntas frecuentes */}
+      <section className="section bg-sand-100">
+        <div className="container grid gap-16 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-7">
+            <SectionHeader eyebrow={t.home.seoEyebrow} title={t.home.seoTitle} />
+            <div className="prose-body mt-8 text-lg leading-relaxed text-ink-700">
+              {t.home.seoText.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+          </div>
+          <nav className="self-start lg:col-span-5" aria-labelledby="seo-services">
+            <h3 id="seo-services" className="font-sans text-xs font-semibold uppercase tracking-eyebrow text-ink-500">
+              {t.home.seoServicesTitle}
+            </h3>
+            <ul className="mt-5 divide-y divide-ink-900/10 border-y border-ink-900/10">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={localePath(lang, `/servicios/${s.slug}`)}
+                    className="group flex min-h-14 items-center justify-between gap-4 py-3 text-ink-900 hover:text-clay-600"
+                  >
+                    {/* Texto del enlace = primera parte del título SEO ("Reforma de baños en Ibiza") */}
+                    {s.metaTitle[lang].split(" · ")[0]}
+                    <Icon name="arrow" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <div className="container mt-20 max-w-4xl">
+          <h2 className="text-3xl md:text-4xl">{t.home.faqTitle}</h2>
+          <div className="mt-8">
+            <FaqList faqs={t.home.faqs} />
+          </div>
         </div>
       </section>
 

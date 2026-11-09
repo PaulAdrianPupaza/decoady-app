@@ -1,8 +1,8 @@
 const es = {
   meta: {
-    siteTitle: "Decoady Reformas · Reformas y construcción en Ibiza",
+    siteTitle: "Reformas en Ibiza · Empresa de reformas integrales | Decoady",
     siteDescription:
-      "Empresa de reformas en Ibiza con más de 25 años de experiencia. Reformas integrales de viviendas, villas, cocinas, baños, piscinas y locales. Presupuesto gratuito y sin compromiso.",
+      "Empresa de reformas en Ibiza con más de 25 años de experiencia. Reformas integrales de pisos, casas y villas, cocinas, baños, piscinas, locales y mantenimiento. Presupuesto gratis.",
     projectsTitle: "Proyectos de reformas en Ibiza",
     projectsDescription:
       "Reformas integrales, villas, piscinas y locales comerciales que hemos realizado en Ibiza. Fotos reales de nuestras obras.",
@@ -26,10 +26,10 @@ const es = {
     language: "Idioma",
   },
   hero: {
-    eyebrow: "Reformas y construcción en Ibiza",
-    title: "Reformamos espacios en Ibiza con oficio y rigor",
+    eyebrow: "Empresa de reformas en Ibiza",
+    title: "Reformas en Ibiza con oficio y rigor",
     subtitle:
-      "Más de 25 años realizando reformas integrales de viviendas, villas y locales en la isla. Un único equipo, un interlocutor y un presupuesto claro desde el primer día.",
+      "Más de 25 años realizando reformas integrales de pisos, casas, villas y locales en la isla. Un único equipo, un interlocutor y un presupuesto claro desde el primer día.",
     primary: "Pedir presupuesto gratis",
     secondary: "Ver proyectos",
   },
@@ -76,6 +76,42 @@ const es = {
     areaTitle: "En toda la isla de Ibiza",
     areaText:
       "Realizamos reformas en Eivissa, Sant Josep de sa Talaia, Sant Antoni de Portmany, Santa Eulària des Riu y Sant Joan de Labritja.",
+    // Bloque de texto para buscadores: responde a "empresa de reformas en Ibiza", "reformas de pisos", etc.
+    seoEyebrow: "Reformas en Ibiza",
+    seoTitle: "Tu empresa de reformas en Ibiza",
+    seoText: [
+      "En Decoady Reformas hacemos reformas en Ibiza desde 2001. Trabajamos en pisos, apartamentos, casas y villas, y también en locales comerciales, bares y restaurantes. Puede ser una reforma integral de vivienda, una cocina o un baño nuevos, una piscina o el mantenimiento de una casa que pasa meses vacía.",
+      "Las reformas de pisos en Ibiza tienen sus propios retos: edificios con instalaciones antiguas, comunidades de vecinos, accesos estrechos en el casco histórico y la humedad del clima de la isla. En las casas y villas de campo, a eso se suman los exteriores, las cubiertas, las piscinas y la piedra. Conocemos bien ambos tipos de obra porque llevamos más de 25 años haciéndolas aquí.",
+      "Además, en Ibiza el calendario cuenta. Varios ayuntamientos limitan las obras ruidosas en zonas turísticas durante la temporada alta, así que planificamos cada reforma para aprovechar los meses de menos actividad y entregar a tiempo.",
+    ],
+    seoServicesTitle: "Qué reformas hacemos",
+    faqTitle: "Preguntas frecuentes sobre reformas en Ibiza",
+    faqs: [
+      {
+        q: "¿Cuánto cuesta una reforma en Ibiza?",
+        a: "Depende del tamaño, del estado de la vivienda y de los acabados que elijas. Por eso visitamos la obra y te damos un presupuesto detallado por partidas, gratuito y sin compromiso, antes de empezar.",
+      },
+      {
+        q: "¿Hacéis reformas de pisos y apartamentos?",
+        a: "Sí. Reformamos pisos y apartamentos completos o por partes: cocina, baños, suelos, instalaciones eléctricas y de fontanería, carpintería y pintura. También coordinamos lo necesario con la comunidad de vecinos.",
+      },
+      {
+        q: "¿En qué zonas de Ibiza trabajáis?",
+        a: "En toda la isla: Eivissa, Sant Josep de sa Talaia, Sant Antoni de Portmany, Santa Eulària des Riu y Sant Joan de Labritja.",
+      },
+      {
+        q: "¿Se pueden hacer obras en verano en Ibiza?",
+        a: "Depende del municipio y de la zona: varios ayuntamientos restringen las obras ruidosas en zonas turísticas durante la temporada alta. Te lo confirmamos en la visita y planificamos la obra para evitar parones.",
+      },
+      {
+        q: "¿Os encargáis de los permisos y licencias?",
+        a: "Sí. Te asesoramos sobre qué trámite necesita tu reforma (comunicación previa o licencia de obra) y nos encargamos de la documentación.",
+      },
+      {
+        q: "¿Hacéis mantenimiento de casas cuando el propietario no está en la isla?",
+        a: "Sí. Nos ocupamos de reparaciones, mantenimiento y puesta a punto de casas y villas antes de tu llegada o de la temporada, y te enviamos fotos del trabajo terminado.",
+      },
+    ],
   },
   cta: {
     title: "¿Tienes una reforma en mente?",
