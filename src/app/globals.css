@@ -16,7 +16,6 @@
   h2,
   h3 {
     @apply font-serif font-normal text-ink-900;
-    font-optical-sizing: auto;
   }
 
   h1,

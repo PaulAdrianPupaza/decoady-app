@@ -14,13 +14,17 @@ npm run typecheck  # comprobación de tipos
 
 ## Idiomas y URLs
 
-| Idioma  | URL de ejemplo              |
-| ------- | --------------------------- |
-| Español | `/proyectos` (sin prefijo)  |
-| English | `/en/proyectos`             |
-| Català  | `/ca/proyectos`             |
+| Idioma  | URL de ejemplo                          |
+| ------- | --------------------------------------- |
+| Español | `/servicios/piscinas` (sin prefijo)     |
+| English | `/en/services/pools`                    |
+| Català  | `/ca/serveis/piscines`                  |
 
-`src/middleware.ts` reescribe internamente las rutas en español a `/es/...`.
+Las URLs están traducidas a cada idioma. Internamente (carpetas de `src/app` y datos) todo está en español, y las traducciones de las secciones y de los slugs están en `src/i18n/config.ts`. **Si añades un servicio o un proyecto, añade también su slug en inglés y en catalán allí.**
+
+`src/middleware.ts` traduce la URL pública a la ruta interna y redirige con 308 las URLs antiguas con nombres en español (p. ej. `/en/servicios` → `/en/services`).
+
+> No uses `headers()` ni `cookies()` en layouts, páginas ni en `not-found.tsx`: harían dinámicas todas las páginas y dejarían de cachearse.
 Todas las páginas se generan como HTML estático, con `hreflang`, canonical y datos estructurados (Schema.org).
 
 ## Dónde se edita el contenido

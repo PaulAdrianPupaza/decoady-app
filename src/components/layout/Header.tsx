@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { localePath, stripLocale, type Locale } from "@/i18n/config";
+import { localePath, parsePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n";
 import { COMPANY } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,8 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header({ lang, nav }: { lang: Locale; nav: Dictionary["nav"] }) {
   const pathname = usePathname();
-  const basePath = stripLocale(pathname);
+  // Ruta interna (en español) de la página actual, para marcar el enlace activo en cualquier idioma
+  const basePath = parsePath(pathname).path;
   const [open, setOpen] = useState(false);
 
   // Cierra el menú al navegar y bloquea el scroll mientras está abierto
@@ -38,7 +39,7 @@ export default function Header({ lang, nav }: { lang: Locale; nav: Dictionary["n
     <>
       <header className="sticky top-0 z-40 border-b border-ink-900/10 bg-sand-50/90 backdrop-blur-md">
         <div className="container flex h-20 items-center justify-between gap-6">
-          <Link href={localePath(lang, "/")} aria-label={COMPANY.name}>
+          <Link href={localePath(lang, "/")}>
             <Logo />
           </Link>
   
@@ -58,7 +59,7 @@ export default function Header({ lang, nav }: { lang: Locale; nav: Dictionary["n
           </nav>
   
           <div className="hidden items-center gap-5 lg:flex">
-            <a href={COMPANY.phoneHref} className="flex items-center gap-2 text-sm font-medium text-ink-700 hover:text-ink-900">
+            <a href={COMPANY.phoneHref} className="flex min-h-10 items-center gap-2 text-sm font-medium text-ink-700 hover:text-ink-900">
               <Icon name="phone" className="h-4 w-4 text-clay-600" />
               {COMPANY.phone}
             </a>
@@ -89,6 +90,8 @@ export default function Header({ lang, nav }: { lang: Locale; nav: Dictionary["n
           open ? "opacity-100" : "pointer-events-none opacity-0"
         )}
         hidden={!open}
+        // Cualquier enlace del menú lo cierra, también si lleva a la página en la que ya estás
+        onClick={(e) => (e.target as HTMLElement).closest("a") && setOpen(false)}
       >
         <nav className="flex flex-col" aria-label="Móvil">
           <Link href={localePath(lang, "/")} className="border-b border-ink-900/10 py-4 font-serif text-2xl text-ink-900">

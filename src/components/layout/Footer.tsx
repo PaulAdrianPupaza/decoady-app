@@ -18,10 +18,10 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
 
         <div className="lg:col-span-3">
           <h2 className="font-sans text-xs font-semibold uppercase tracking-eyebrow text-sand-50">{nav.services}</h2>
-          <ul className="mt-5 space-y-3 text-sm">
+          <ul className="mt-4 space-y-1 text-sm">
             {services.map((s) => (
               <li key={s.slug}>
-                <Link href={localePath(lang, `/servicios/${s.slug}`)} className="hover:text-white">
+                <Link href={localePath(lang, `/servicios/${s.slug}`)} className="inline-block py-1 hover:text-white">
                   {s.title[lang]}
                 </Link>
               </li>
@@ -31,31 +31,31 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
 
         <div className="lg:col-span-2">
           <h2 className="font-sans text-xs font-semibold uppercase tracking-eyebrow text-sand-50">{footer.explore}</h2>
-          <ul className="mt-5 space-y-3 text-sm">
-            <li><Link href={localePath(lang, "/")} className="hover:text-white">{nav.home}</Link></li>
-            <li><Link href={localePath(lang, "/servicios")} className="hover:text-white">{nav.services}</Link></li>
-            <li><Link href={localePath(lang, "/proyectos")} className="hover:text-white">{nav.projects}</Link></li>
-            <li><Link href={localePath(lang, "/contacto")} className="hover:text-white">{nav.contact}</Link></li>
+          <ul className="mt-4 space-y-1 text-sm">
+            <li><Link href={localePath(lang, "/")} className="inline-block py-1 hover:text-white">{nav.home}</Link></li>
+            <li><Link href={localePath(lang, "/servicios")} className="inline-block py-1 hover:text-white">{nav.services}</Link></li>
+            <li><Link href={localePath(lang, "/proyectos")} className="inline-block py-1 hover:text-white">{nav.projects}</Link></li>
+            <li><Link href={localePath(lang, "/contacto")} className="inline-block py-1 hover:text-white">{nav.contact}</Link></li>
           </ul>
         </div>
 
         <div className="lg:col-span-3">
           <h2 className="font-sans text-xs font-semibold uppercase tracking-eyebrow text-sand-50">{footer.contact}</h2>
-          <ul className="mt-5 space-y-4 text-sm">
+          <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <a href={COMPANY.phoneHref} className="flex items-center gap-3 hover:text-white">
+              <a href={COMPANY.phoneHref} className="flex min-h-8 items-center gap-3 hover:text-white">
                 <Icon name="phone" className="h-4 w-4 shrink-0 text-clay-300" />
                 {COMPANY.phone}
               </a>
             </li>
             <li>
-              <a href={COMPANY.whatsappHref} target="_blank" rel="noopener" className="flex items-center gap-3 hover:text-white">
+              <a href={COMPANY.whatsappHref} target="_blank" rel="noopener" className="flex min-h-8 items-center gap-3 hover:text-white">
                 <Icon name="whatsapp" className="h-4 w-4 shrink-0 text-clay-300" />
                 WhatsApp
               </a>
             </li>
             <li>
-              <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-3 break-all hover:text-white">
+              <a href={`mailto:${COMPANY.email}`} className="flex min-h-8 items-center gap-3 break-all hover:text-white">
                 <Icon name="mail" className="h-4 w-4 shrink-0 text-clay-300" />
                 {COMPANY.email}
               </a>
@@ -87,7 +87,7 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
           <p>
             © {new Date().getFullYear()} {COMPANY.name}. {footer.rights}
           </p>
-          <Link href={localePath(lang, "/legal")} className="hover:text-white">
+          <Link href={localePath(lang, "/legal")} className="inline-block py-1 hover:text-white">
             {footer.legal}
           </Link>
         </div>

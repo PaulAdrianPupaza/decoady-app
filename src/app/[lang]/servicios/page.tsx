@@ -60,7 +60,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
                 </ul>
                 <Link
                   href={localePath(lang, `/servicios/${s.slug}`)}
-                  className="group mt-10 inline-flex items-center gap-2 text-sm font-semibold text-ink-900"
+                  className="group mt-10 inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-ink-900"
                 >
                   {t.services.more}
                   <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
